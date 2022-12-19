@@ -1,0 +1,12 @@
+[
+  {
+    "context": ["*"],
+    "target": "https://v2.sg.media-imdb.com/suggestion/h/",
+    "secure": false
+  },
+  {
+    "context": ["*"],
+    "target": "https://www.omdbapi.com/",
+    "secure": false
+  }
+]

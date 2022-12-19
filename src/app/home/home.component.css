@@ -1,0 +1,32 @@
+/* .col-lg-3 {
+  height: 330px;
+  width: 1550px;
+  padding: 20px;
+} */
+.xlsremove {
+  display: none;
+}
+.card {
+  color: white;
+}
+.card-title {
+  height: 50px;
+}
+.card-img-top {
+  max-height: 300px;
+}
+.card-body {
+  padding-bottom: 0px !important;
+}
+.close {
+  position: absolute;
+  background: #dc3545;
+  color: white;
+  top: -8px;
+  right: -10px;
+  height: 20px;
+  width: 20px;
+  font-size: medium;
+  padding: 0;
+  border: 0px;
+}

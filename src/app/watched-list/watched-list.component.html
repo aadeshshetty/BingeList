@@ -1,0 +1,96 @@
+<app-header (searchText)="onSearchText($event)"></app-header>
+<div class="container">
+  <div class="row">
+    <div
+      *ngFor="let movie of watchedList"
+      class="col-md-6 col-lg-3 mb-5"
+      [ngClass]="
+        s === '' || movie.title.toLowerCase().includes(s) ? 'xls' : 'xlsremove'
+      "
+    >
+      <div class="card bg-dark border-secondary mb-3 h-100">
+        <a [routerLink]="['/movie/' + movie.id]">
+          <img
+            src="{{ movie.image }}"
+            class="card-img-top img-responsive"
+            alt="{{ movie.title }}"
+          />
+        </a>
+        <div class="card-title text-center" style="font-size: large">
+          {{ movie.title }}
+        </div>
+        <div class="card-body">
+          <h6 *ngFor="let rating of movie.ratings" class="card-subtitle">
+            <i
+              *ngIf="
+                rating.Source === 'imdb' ||
+                rating.Source === 'IMDB' ||
+                rating.Source === 'Internet Movie Database'
+              "
+              class="fas fa-star"
+              >{{ rating.Value }}</i
+            >
+            <div
+              *ngIf="
+                rating.Source === 'imdb' ||
+                rating.Source === 'IMDB' ||
+                rating.Source === 'Internet Movie Database'
+              "
+              style="float: right"
+            >
+              {{ movie.year }}
+            </div>
+          </h6>
+        </div>
+        <div
+          style="height: 57px; padding: 0px 15px 0px 15px"
+          *ngIf="movie.tags; else noTags"
+        >
+          <span
+            *ngFor="let tag of movie.tags"
+            class="badge bg-secondary me-2"
+            >{{ tag }}</span
+          >
+        </div>
+        <div
+          class="card-footer"
+          *ngIf="movie.watched === 'yes'; else removeWatched"
+        >
+          <button
+            (click)="toggleWatched(movie)"
+            type="button"
+            class="btn btn-danger btn-block w-100"
+          >
+            Remove from watched
+          </button>
+        </div>
+      </div>
+      <ng-template #removeWatched>
+        <div class="card-footer">
+          <button
+            (click)="toggleWatched(movie)"
+            type="button"
+            class="btn btn-warning btn-block w-100"
+          >
+            Add to watched
+          </button>
+        </div>
+      </ng-template>
+
+      <ng-template #noTags>
+        <div style="height: 57px; padding: 0px 15px 0px 15px">No tags</div>
+      </ng-template>
+    </div>
+  </div>
+</div>
+<div
+  *ngIf="watchedList.length === 0"
+  style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+  "
+>
+  <h1 class="text-white">No Movies in Watched</h1>
+</div>

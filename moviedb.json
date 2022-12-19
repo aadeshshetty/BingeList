@@ -1,0 +1,332 @@
+{
+  "movies": [
+    {
+      "title": "Demon Slayer - The Movie: Mugen Train",
+      "year": 2020,
+      "description": "Tanjiro Kamado, joined with Inosuke Hashibira, a boy raised by boars who wears a boar's head, and Zenitsu Agatsuma, a scared boy who reveals his true power when he sleeps, board the Infinity Train on a new mission with the Flame Pillar, Kyojuro Rengoku, to defeat a demon who has been tormenting the people and killing the demon slayers who oppose it!",
+      "image": "https://m.media-amazon.com/images/M/MV5BODI2NjdlYWItMTE1ZC00YzI2LTlhZGQtNzE3NzA4MWM0ODYzXkEyXkFqcGdeQXVyNjU1OTg4OTM@._V1_.jpg",
+      "watched": "yes",
+      "dateWatched": "2022-11-16",
+      "releaseDate": "23 Apr 2021",
+      "liked": true,
+      "runtime": "117 min",
+      "tags": [
+        "Anime"
+      ],
+      "id": 1,
+      "ratings": [
+        {
+          "Source": "Internet Movie Database",
+          "Value": "8.2/10"
+        },
+        {
+          "Source": "Metacritic",
+          "Value": "72/100"
+        }
+      ],
+      "genres": "Animation, Action, Adventure",
+      "director": "Haruo Sotozaki"
+    },
+    {
+      "title": "Jujutsu Kaisen 0: The Movie",
+      "year": 2021,
+      "description": "Yuuta Okkotsu is haunted. Ever since his childhood friend Rika died in a traffic accident, her ghost has stuck with him. But her spirit does not appear as the sweet girl Yuuta once knew. Instead, she manifests as a monstrous and powerful entity who fiercely protects him. Unable to control Rika's violent behavior, Yuuta is helpless to stop the bloodshed that follows from her brutal vengeance. As a result, when apprehended by \"Jujutsu\" sorcerers--the secret guardians of the world, trained to combat forces like Rika--Yuuta wishes to be completely isolated so that no one else can get hurt. Yet his apprehender, the master sorcerer Satoru Gojou, has different plans for him: he will join Jujutsu High School and learn to control Rika in order to help people. Now a first-year at this school, Yuuta starts to learn Jujutsu arts and combat malignant beings. Alongside his new classmates Maki Zenin, a Jujutsu weapons expert; Toge Inumaki, a spellcaster who uses his words as weapons; and Panda, a seemingly walking and talking panda bear, Yuuta begins to find his place in the world and, for once, to feel comfortable with his abilities. However, as his training progresses, Yuuta comes to learn that the dangers of the Jujutsu world go far beyond that of wicked spirits.",
+      "image": "https://m.media-amazon.com/images/M/MV5BYzFmMjAwMDYtNzM0Zi00NjY2LWFjMjYtMGQ1OTRiZjk5YjJkXkEyXkFqcGdeQXVyMTMwODY5NDc2._V1_.jpg",
+      "watched": "yes",
+      "dateWatched": "2022-09-30",
+      "releaseDate": "18 Mar 2022",
+      "liked": true,
+      "runtime": "112 min",
+      "tags": [
+        "Anime"
+      ],
+      "id": 2,
+      "ratings": [
+        {
+          "Source": "Internet Movie Database",
+          "Value": "7.8/10"
+        },
+        {
+          "Source": "Rotten Tomatoes",
+          "Value": "98%"
+        },
+        {
+          "Source": "Metacritic",
+          "Value": "71/100"
+        }
+      ],
+      "genres": "Animation, Action, Fantasy",
+      "director": "Seong-Hu Park"
+    },
+    {
+      "title": "1899",
+      "year": 2022,
+      "description": "The whole European angle was very important for us, not only story wise but also the way we were going to produce it. It really had to be a European collaboration, not just cast but also crew. We felt that with the past years of Europe being on the decline, we wanted to give a counterpoint to Brexit, and to nationalism rising in different countries, to go back to that idea of Europe and Europeans working and creating together.",
+      "image": "https://m.media-amazon.com/images/M/MV5BMTU1N2I5OTgtNDE2MS00ZTdmLWJlODktNDMwMGVmNzY5NmUxXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_.jpg",
+      "watched": "2",
+      "dateWatched": "",
+      "releaseDate": "17 Nov 2022",
+      "liked": true,
+      "runtime": "56S min",
+      "tags": [
+        "Series",
+        "Drama",
+        "Horror"
+      ],
+      "id": 4,
+      "ratings": [
+        {
+          "Source": "Internet Movie Database",
+          "Value": "9.3/10"
+        }
+      ],
+      "genres": "Drama, History, Horror",
+      "director": "N/A"
+    },
+    {
+      "title": "Monster",
+      "imdbId": "tt0434706",
+      "year": "2004–2005",
+      "description": "Dr. Kenzo Tenma, a young but extremely talented neurosurgeon, lives his life working in a hospital in Germany. He is respected by his superiors for his incredible surgical skills, envied by his peers and he is engaged to the daughter of the hospital director. But one day his bright future changes when a little boy is brought in with a serious head injury, along with his twin sister, the aftermath of a family massacre. He is faced with a huge dilemma when his superior orders him to abort the boy's surgery and operate on the mayor instead, who was brought in much later. He decides that \"all life is equal\" and goes against his superiors to save the boy's life (who arrived first), which ultimately results in the mayor's death. The boy survives, leaving Tenma's career in ruins, his engagement to his fiancé broken. His downward spiral begins when one night, while he is out cold in a drunken stupor, the twins vanish from the hospital and Tenma's superiors - along with the hospital director - are found dead. Tenma, having no alibi and the only one with motive, is the prime murder suspect. He goes into hiding and vows to find the twins and prove his innocence. Little did he know, that this is only the beginning of a terrifying journey through countries, buried secrets and the dark depths of the human psyche...",
+      "image": "https://m.media-amazon.com/images/M/MV5BM2ZkYTAwMGMtOGEwOS00MzBjLTgxOGYtZTYwY2E1ZjMyZmY4XkEyXkFqcGdeQXVyNTgyNTA4MjM@._V1_SX300.jpg",
+      "watched": "no",
+      "dateWatched": "",
+      "releaseDate": "06 Apr 2004",
+      "liked": true,
+      "runtime": "1 min",
+      "tags": [
+        "Anime",
+        "Drama"
+      ],
+      "id": 5,
+      "ratings": [
+        {
+          "Source": "Internet Movie Database",
+          "Value": "8.7/10"
+        }
+      ],
+      "genres": "Animation, Crime, Drama",
+      "director": "N/A"
+    },
+    {
+      "title": "Hunter x Hunter",
+      "imdbId": "",
+      "year": "2011–2014",
+      "description": "Gon Freecss is a young boy living on Whale Island. He learns from \"Hunter\" Kite, that his father, who he was told was dead, is still alive somewhere as a top \"Hunter,\" risking his life to seek unknown items, such as hidden treasures, curiosa, exotic living creatures, etc. Gon decides to become a professional Hunter and leaves the island. To become a Hunter, he must pass the Hunter Examination, where he meets and befriends three other applicants: Kurapika, Leorio and Killua. Can Gon pass this formidable hurdle, the Hunter Examination, to become \"the Best Hunter in the World\" and eventually meet his father?",
+      "image": "https://m.media-amazon.com/images/M/MV5BNGM0YTk3MWEtN2JlZC00ZmZmLWIwMDktZTMxZGE5Zjc2MGExXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_SX300.jpg",
+      "watched": "yes",
+      "dateWatched": "2019-10-15T00:00:00.000Z",
+      "releaseDate": "17 Apr 2016",
+      "liked": true,
+      "runtime": "24 min",
+      "tags": [
+        "Anime",
+        "Fav"
+      ],
+      "id": 6,
+      "ratings": [
+        {
+          "Source": "Internet Movie Database",
+          "Value": "9.0/10"
+        }
+      ],
+      "genres": "Animation, Action, Adventure",
+      "director": "N/A"
+    },
+    {
+      "title": "Your Name.",
+      "imdbId": "",
+      "year": "2016",
+      "description": "Mitsuha is the daughter of the mayor of a small mountain town. She's a straightforward high school girl who lives with her sister and her grandmother and has no qualms about letting it be known that she's uninterested in Shinto rituals or helping her father's electoral campaign. Instead she dreams of leaving the boring town and trying her luck in Tokyo. Taki is a high school boy in Tokyo who works part-time in an Italian restaurant and aspires to become an architect or an artist. Every night he has a strange dream where he becomes...a high school girl in a small mountain town.",
+      "image": "https://m.media-amazon.com/images/M/MV5BODRmZDVmNzUtZDA4ZC00NjhkLWI2M2UtN2M0ZDIzNDcxYThjL2ltYWdlXkEyXkFqcGdeQXVyNTk0MzMzODA@._V1_SX300.jpg",
+      "watched": "yes",
+      "dateWatched": "2020-01-22T00:00:00.000Z",
+      "releaseDate": "07 Apr 2017",
+      "liked": true,
+      "runtime": "106 min",
+      "tags": [
+        "Anime",
+        "Movie"
+      ],
+      "id": 10,
+      "ratings": [
+        {
+          "Source": "Internet Movie Database",
+          "Value": "8.4/10"
+        },
+        {
+          "Source": "Rotten Tomatoes",
+          "Value": "98%"
+        },
+        {
+          "Source": "Metacritic",
+          "Value": "79/100"
+        }
+      ],
+      "genres": "Animation, Drama, Fantasy",
+      "director": "Makoto Shinkai"
+    },
+    {
+      "title": "A Silent Voice: The Movie",
+      "imdbId": "",
+      "year": "2016",
+      "description": "The story revolves around Shôko Nishimiya, a grade school student who has impaired hearing. She transfers into a new school, where she is bullied by her classmates, especially Shôya Ishida. It gets to the point where she transfers to another school and as a result, Shôya is ostracized and bullied himself, with no friends to speak to and no plans for the future. Years later, he epicly sets himself on a path to redemption.",
+      "image": "https://m.media-amazon.com/images/M/MV5BZGRkOGMxYTUtZTBhYS00NzI3LWEzMDQtOWRhMmNjNjJjMzM4XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
+      "watched": "yes",
+      "dateWatched": "2020-07-22",
+      "releaseDate": "17 Sep 2016",
+      "liked": true,
+      "runtime": "130 min",
+      "tags": [
+        "Anime",
+        "Movie"
+      ],
+      "id": 11,
+      "ratings": [
+        {
+          "Source": "Internet Movie Database",
+          "Value": "8.1/10"
+        },
+        {
+          "Source": "Metacritic",
+          "Value": "78/100"
+        }
+      ],
+      "genres": "Animation, Drama",
+      "director": "Naoko Yamada"
+    },
+    {
+      "title": "Weathering with You",
+      "imdbId": "",
+      "year": "2019",
+      "description": "A high-school boy who has run away to Tokyo befriends a girl who appears to be able to manipulate the weather.",
+      "image": "https://m.media-amazon.com/images/M/MV5BNzE4ZDEzOGUtYWFjNC00ODczLTljOGQtZGNjNzhjNjdjNjgzXkEyXkFqcGdeQXVyNzE5ODMwNzI@._V1_SX300.jpg",
+      "watched": "yes",
+      "dateWatched": "2020-11-23T00:00:00.000Z",
+      "releaseDate": "17 Jan 2020",
+      "liked": true,
+      "runtime": "112 min",
+      "tags": [
+        "Anime",
+        "Movie"
+      ],
+      "id": 12,
+      "ratings": [
+        {
+          "Source": "Internet Movie Database",
+          "Value": "7.5/10"
+        },
+        {
+          "Source": "Rotten Tomatoes",
+          "Value": "92%"
+        },
+        {
+          "Source": "Metacritic",
+          "Value": "72/100"
+        }
+      ],
+      "genres": "Animation, Drama, Fantasy",
+      "director": "Makoto Shinkai"
+    },
+    {
+      "title": "Dragon Ball Super",
+      "imdbId": "",
+      "year": "2015–2018",
+      "description": "With Majin Buu defeated half-a-year prior, peace returns to Earth, where Son Goku (now a radish farmer) and his friends now live peaceful lives. However, a new threat appears in the form of Beerus, the God of Destruction. Considered the most terrifying being in the entire universe, Beerus is eager to fight the legendary warrior seen in a prophecy foretold decades ago known as the Super Saiyan God. The series retells the events from the two Dragon Ball Z films, Battle of Gods and Resurrection 'F' before proceeding to an original story about the exploration of alternate universes.",
+      "image": "https://m.media-amazon.com/images/M/MV5BY2I2MzI1ODYtMWRlOS00MzdhLWEyOWEtYWJhNmFiZTIxMGJhXkEyXkFqcGdeQXVyMTExNDQ2MTI@._V1_SX300.jpg",
+      "watched": "yes",
+      "dateWatched": "2022-11-24",
+      "releaseDate": "07 Jan 2017",
+      "liked": true,
+      "runtime": "28S min",
+      "tags": [],
+      "id": 13,
+      "ratings": [
+        {
+          "Source": "Internet Movie Database",
+          "Value": "8.3/10"
+        }
+      ],
+      "genres": "Animation, Action, Adventure",
+      "director": "N/A"
+    },
+    {
+      "title": "A Silent Voice: The Movie",
+      "imdbId": "",
+      "year": "2016",
+      "description": "The story revolves around Shôko Nishimiya, a grade school student who has impaired hearing. She transfers into a new school, where she is bullied by her classmates, especially Shôya Ishida. It gets to the point where she transfers to another school and as a result, Shôya is ostracized and bullied himself, with no friends to speak to and no plans for the future. Years later, he epicly sets himself on a path to redemption.",
+      "image": "https://m.media-amazon.com/images/M/MV5BZGRkOGMxYTUtZTBhYS00NzI3LWEzMDQtOWRhMmNjNjJjMzM4XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
+      "watched": "yes",
+      "dateWatched": "2022-11-24",
+      "releaseDate": "17 Sep 2016",
+      "liked": null,
+      "runtime": "130 min",
+      "tags": [],
+      "id": 14,
+      "ratings": [
+        {
+          "Source": "Internet Movie Database",
+          "Value": "8.1/10"
+        },
+        {
+          "Source": "Metacritic",
+          "Value": "78/100"
+        }
+      ],
+      "genres": "Animation, Drama",
+      "director": "Naoko Yamada"
+    },
+    {
+      "title": "A Silent Voice: The Movie",
+      "imdbId": "",
+      "year": "2016",
+      "description": "The story revolves around Shôko Nishimiya, a grade school student who has impaired hearing. She transfers into a new school, where she is bullied by her classmates, especially Shôya Ishida. It gets to the point where she transfers to another school and as a result, Shôya is ostracized and bullied himself, with no friends to speak to and no plans for the future. Years later, he epicly sets himself on a path to redemption.",
+      "image": "https://m.media-amazon.com/images/M/MV5BZGRkOGMxYTUtZTBhYS00NzI3LWEzMDQtOWRhMmNjNjJjMzM4XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
+      "watched": "yes",
+      "dateWatched": "2022-11-24",
+      "releaseDate": "17 Sep 2016",
+      "liked": true,
+      "runtime": "130 min",
+      "tags": [],
+      "id": 15,
+      "ratings": [
+        {
+          "Source": "Internet Movie Database",
+          "Value": "8.1/10"
+        },
+        {
+          "Source": "Metacritic",
+          "Value": "78/100"
+        }
+      ],
+      "genres": "Animation, Drama",
+      "director": "Naoko Yamada"
+    },
+    {
+      "title": "A Silent Voice: The Movie",
+      "imdbId": "",
+      "year": "2016",
+      "description": "The story revolves around Shôko Nishimiya, a grade school student who has impaired hearing. She transfers into a new school, where she is bullied by her classmates, especially Shôya Ishida. It gets to the point where she transfers to another school and as a result, Shôya is ostracized and bullied himself, with no friends to speak to and no plans for the future. Years later, he epicly sets himself on a path to redemption.",
+      "image": "https://m.media-amazon.com/images/M/MV5BZGRkOGMxYTUtZTBhYS00NzI3LWEzMDQtOWRhMmNjNjJjMzM4XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
+      "watched": "yes",
+      "dateWatched": "2022-11-24",
+      "releaseDate": "17 Sep 2016",
+      "liked": null,
+      "runtime": "130 min",
+      "tags": [],
+      "id": 16,
+      "ratings": [
+        {
+          "Source": "Internet Movie Database",
+          "Value": "8.1/10"
+        },
+        {
+          "Source": "Metacritic",
+          "Value": "78/100"
+        }
+      ],
+      "genres": "Animation, Drama",
+      "director": "Naoko Yamada"
+    }
+  ]
+}

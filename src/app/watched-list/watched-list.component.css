@@ -1,0 +1,16 @@
+.card {
+  color: white;
+  height: 100%;
+}
+.card-title {
+  height: 50px;
+}
+.card-img-top {
+  max-height: 300px;
+}
+.card-body {
+  padding-bottom: 0px !important;
+}
+.xlsremove {
+  display: none;
+}

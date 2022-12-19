@@ -1,0 +1,145 @@
+<app-header></app-header>
+<h1 class="text-white text-center">Add Movie</h1>
+<div class="card bg-dark p-4" style="max-width: 50vw; margin: auto">
+  <form [formGroup]="movie" (ngSubmit)="submit()">
+    <div class="form-group mb-2">
+      <label class="form-label" for="title">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="title"
+        id="title"
+        placeholder="Enter Movie Name as shown in *IMDB*"
+        required
+      />
+    </div>
+    <div class="form-group mb-2">
+      <label class="form-label" for="imdbId">IMDB Id</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="imdbId"
+        id="imdbId"
+        placeholder="Enter id present in imdb url (starts with tt)"
+      />
+    </div>
+    <!-- <div class="form-group">
+      <label class="form-label" for="year">Year</label>
+      <input
+        type="number"
+        class="form-control"
+        formControlName="year"
+        id="year"
+        placeholder="Year Released"
+      />
+    </div> -->
+    <!-- <div class="form-group">
+      <label class="form-label" for="description">Description</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="description"
+        id="description"
+        placeholder="Enter Description"
+      />
+    </div> -->
+    <!-- <div class="form-group">
+      <label class="form-label" for="image">Image URL</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="image"
+        id="image"
+        placeholder="Enter Image URL"
+      />
+    </div> -->
+    <!-- <div class="form-group">
+      <label class="form-label" for="runtime">Runtime</label>
+      <input
+        class="form-control"
+        type="text"
+        formControlName="runtime"
+        id="runtime"
+        placeholder="Enter runtime of movie"
+      />
+    </div> -->
+    <!-- <div formArrayName="ratings">
+      <div
+        *ngFor="let tag of ratings.controls; let i = index"
+        [formGroupName]="i"
+      >
+        Source :
+        <input class="form-control" type="text" formControlName="source" />
+        Rating :
+        <input class="form-control" type="text" formControlName="rating" />
+      </div>
+    </div>
+    <button type="button" class="btn btn-primary m-auto" (click)="addRating()">
+      Add Rating
+    </button> -->
+    <div class="form-group mb-2">
+      <label class="form-label" for="watched">Watched</label>
+      <select class="form-select" formControlName="watched" required>
+        <option value="yes">yes</option>
+        <option value="no">no</option>
+      </select>
+    </div>
+    <div *ngIf="movie.get('watched')!.value === 'yes'" class="form-group mb-2">
+      <label class="form-label" for="dateWatched">Date Watched</label>
+      <input
+        type="date"
+        class="form-control"
+        formControlName="dateWatched"
+        id="dateWatched"
+        value="now"
+        placeholder="Enter Date Watched YYYY-MM-DD"
+      />
+    </div>
+    <div class="form-group form-check mb-2">
+      <label class="form-label" for="liked">Liked</label>
+      <input
+        class="form-check-input"
+        type="checkbox"
+        formControlName="liked"
+        id="liked"
+      />
+    </div>
+    <div formArrayName="tags" class="mb-2">
+      <div *ngFor="let tag of tags.controls; let i = index">
+        <label class="form-label">Tag</label>
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Tag"
+            [formControlName]="i"
+          />
+          <button
+            type="button"
+            (click)="removeTag(i)"
+            class="btn btn-outline-secondary text-white"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+    <button
+      type="button"
+      class="btn btn-primary"
+      style="margin: 5px 0px !important"
+      (click)="addTag()"
+    >
+      Add Tag
+    </button>
+    <div class="d-grid my-3">
+      <button
+        [ngClass]="movie.valid === true ? 'btn' : 'disabled'"
+        type="submit"
+        class="btn btn-outline-danger text-white"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</div>

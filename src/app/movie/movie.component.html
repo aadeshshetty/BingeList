@@ -1,0 +1,193 @@
+<app-header></app-header>
+<div class="container p-4">
+  <div class="row">
+    <div class="col-lg-3">
+      <div class="card bg-dark border-secondary mb-3 h-100">
+        <a>
+          <img
+            src="{{ movie.image }}"
+            class="card-img-top img-responsive"
+            alt="{{ movie.title }}"
+          />
+        </a>
+        <div class="card-title text-center" style="font-size: large">
+          {{ movie.title }}
+        </div>
+        <div class="card-body">
+          <h6 *ngFor="let rating of movie.ratings" class="card-subtitle">
+            <i
+              *ngIf="
+                rating.Source === 'imdb' ||
+                rating.Source === 'IMDB' ||
+                rating.Source === 'Internet Movie Database'
+              "
+              class="fas fa-star"
+              >{{ rating.Value }}</i
+            >
+            <div
+              *ngIf="
+                rating.Source === 'imdb' ||
+                rating.Source === 'IMDB' ||
+                rating.Source === 'Internet Movie Database'
+              "
+              style="float: right"
+            >
+              {{ movie.year }}
+            </div>
+          </h6>
+        </div>
+        <div
+          class="card-footer"
+          *ngIf="movie.watched === 'yes'; else removeWatched"
+        >
+          <button
+            (click)="toggleWatched(movie)"
+            type="button"
+            class="btn btn-danger btn-block w-100"
+          >
+            Remove from watched
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="card bg-dark border-secondary mb-3 h-100">
+        <div class="card-body">
+          <div id="description">{{ movie.description }}</div>
+          <hr />
+          <div>
+            <p>Director: {{ movie.director }}</p>
+            <p>Runtime: {{ movie.runtime }}</p>
+            <p>Release Date: {{ movie.releaseDate }}</p>
+            <p>Genres: {{ movie.genres }}</p>
+          </div>
+          <hr />
+          <div>
+            <h4>Tags</h4>
+            <div
+              style="height: 57px; padding: 0px 15px 0px 15px"
+              *ngIf="movie.tags; else noTags"
+            >
+              <span
+                *ngFor="let tag of movie.tags"
+                class="badge bg-secondary me-2"
+                >{{ tag }}</span
+              >
+            </div>
+          </div>
+          <div>
+            <div class="input-group mb-3">
+              <input
+                [(ngModel)]="tag"
+                type="text"
+                class="form-control"
+                placeholder="Tag"
+              />
+            </div>
+          </div>
+          <button
+            type="button"
+            class="btn btn-primary"
+            style="margin: 5px 0px !important"
+            (click)="addTag(movie)"
+          >
+            Add Tag
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <div class="card bg-dark border-secondary mb-3 h-100">
+        <div class="card-body text-center">
+          <button
+            type="button"
+            class="btn btn-dark"
+            style="margin: 3pt"
+            *ngIf="movie.watched === 'yes'; else watched"
+            (click)="toggleWatched(movie)"
+          >
+            <i class="fas fa-eye"><br />Unwatch</i>
+          </button>
+          <button
+            (click)="toggleLiked(movie)"
+            type="button"
+            class="btn btn-outline-secondary"
+            style="margin: 3pt"
+            *ngIf="!movie.liked; else liked"
+          >
+            <i class="far fa-heart"><br />Like</i>
+          </button>
+          <hr />
+          <div>
+            <h4>Date Watched</h4>
+            <h5>
+              <span (click)="dateChange(movie)" style="cursor: pointer"
+                ><i class="fas fa-edit me-2"></i
+              ></span>
+              <input
+                [(ngModel)]="date"
+                *ngIf="clicked"
+                type="date"
+                class="form-control"
+                id="dateWatched"
+                placeholder="Enter Date Watched"
+              />
+              <span class="badge bg-secondary">
+                {{ movie.dateWatched | date: "yyyy-MM-dd" }}
+              </span>
+            </h5>
+          </div>
+          <hr />
+          <div>
+            <h4>Ratings</h4>
+            <div *ngFor="let rate of movie.ratings" class="mt-2">
+              <h6 class="text-center">{{ rate.Source | uppercase }}</h6>
+              <div class="text-center">
+                <i class="fas fa-star"> {{ rate.Value }}</i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #removeWatched>
+    <div class="card-footer">
+      <button
+        (click)="toggleWatched(movie)"
+        type="button"
+        class="btn btn-warning btn-block w-100"
+      >
+        Add to watched
+      </button>
+    </div>
+  </ng-template>
+
+  <ng-template #noTags>
+    <div style="height: 57px; padding: 0px 15px 0px 15px">
+      No tags available
+    </div>
+  </ng-template>
+
+  <ng-template #watched>
+    <button
+      (click)="toggleWatched(movie)"
+      type="button"
+      class="btn btn-outline-secondary"
+      style="margin: 3pt"
+    >
+      <i class="far fa-eye"><br />Watch</i>
+    </button>
+  </ng-template>
+
+  <ng-template #liked>
+    <button
+      (click)="toggleLiked(movie)"
+      type="button"
+      class="btn btn-dark"
+      style="margin: 3pt"
+    >
+      <i class="fas fa-heart"><br />Unlike</i>
+    </button>
+  </ng-template>
+</div>
