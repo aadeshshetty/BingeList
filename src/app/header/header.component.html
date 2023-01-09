@@ -56,11 +56,19 @@
         <input
           class="form-control me-2"
           type="search"
-          placeholder="Name/Tags with space"
+          placeholder="Name/(Tags with space)"
           aria-label="Search"
           [(ngModel)]="enteredSearch"
           (input)="onSearchChange()"
         />
+        <button
+          class="btn btn-outline-secondary text-white"
+          style="border: 0px !important"
+          type="submit"
+          (click)="logout()"
+        >
+          Logout
+        </button>
       </div>
     </div>
   </div>

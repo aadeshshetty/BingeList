@@ -15,6 +15,7 @@ export class AuthService {
       },
       (err) => {
         alert('Something went wrong');
+        localStorage.removeItem('token');
         this.router.navigate(['/login']);
       }
     );

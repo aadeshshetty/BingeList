@@ -38,7 +38,7 @@
         </div>
         <div
           class="card-footer"
-          *ngIf="movie.watched === 'yes'; else removeWatched"
+          *ngIf="movie.watched == true; else removeWatched"
         >
           <button
             (click)="toggleWatched(movie)"
@@ -93,6 +93,14 @@
           >
             Add Tag
           </button>
+          <button
+            type="button"
+            class="btn btn-secondary"
+            style="margin: 5px 0px !important"
+            (click)="clearTags(movie)"
+          >
+            Clear Tags
+          </button>
         </div>
       </div>
     </div>
@@ -103,7 +111,7 @@
             type="button"
             class="btn btn-dark"
             style="margin: 3pt"
-            *ngIf="movie.watched === 'yes'; else watched"
+            *ngIf="movie.watched == true; else watched"
             (click)="toggleWatched(movie)"
           >
             <i class="fas fa-eye"><br />Unwatch</i>
@@ -133,7 +141,7 @@
                 placeholder="Enter Date Watched"
               />
               <span class="badge bg-secondary">
-                {{ movie.dateWatched | date: "yyyy-MM-dd" }}
+                {{ movie.dateWatched | date : "yyyy-MM-dd" }}
               </span>
             </h5>
           </div>

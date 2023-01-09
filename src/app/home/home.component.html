@@ -8,21 +8,15 @@
       [ngClass]="
         s === '' ||
         movie.title.toLowerCase().includes(s) ||
-        movie.tags!.toString().split(',').join(' ').toLowerCase().includes(s)
+        (movie.tags &&
+          movie.tags!.toString().split(',').join(' ').toLowerCase().includes(s))
           ? 'xls'
           : 'xlsremove'
       "
     >
       <!-- <div class="col-md-6 col-lg-3 my-3"> -->
-      <div
-        *ngIf="
-          s === '' ||
-          movie.title.toLowerCase().includes(s) ||
-          movie.tags!.toString().split(',').join(' ').toLowerCase().includes(s)
-        "
-        class="card bg-dark border-secondary mb-3"
-      >
-        <button class="close rounded-circle" (click)="removeFromList(movie)">
+      <div class="card bg-dark border-secondary mb-3 h-100">
+        <button class="close rounded-circle" (click)="removeFromList(movie.id)">
           <span style="position: relative; top: -4.5px">&times;</span>
         </button>
         <a [routerLink]="['/movie/' + movie.id]">
@@ -30,6 +24,7 @@
             src="{{ movie.image }}"
             class="card-img-top img-responsive"
             alt="{{ movie.title }}"
+            style="min-height: 300px"
           />
         </a>
         <div class="card-title text-center" style="font-size: large">
@@ -69,7 +64,7 @@
           >
         </div>
         <div class="card-footer">
-          <span *ngIf="movie.watched === 'yes'; else removeWatched">
+          <span *ngIf="movie.watched == true; else removeWatched">
             <button
               (click)="toggleWatched(movie)"
               type="button"
@@ -86,6 +81,7 @@
             (click)="toggleWatched(movie)"
             type="button"
             class="btn btn-warning btn-block w-100"
+            style="margin-bottom: 25px !important"
           >
             Add to watched
           </button>

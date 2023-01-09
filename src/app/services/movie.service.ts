@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable, Subject, tap } from 'rxjs';
+import { delay, first, map, Observable, Subject, tap } from 'rxjs';
 import { Movie } from '../models/movie.model';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import {
@@ -8,6 +8,8 @@ import {
   AngularFireList,
   SnapshotAction,
 } from '@angular/fire/compat/database';
+import * as firebase from 'firebase/compat';
+import { DatePipe } from '@angular/common';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -30,13 +32,15 @@ export class MovieService {
   private imdbDetails = {};
 
   userId: string = '';
+  date = this.datepipe.transform(new Date(), 'yyyy-MM-dd');
   get Updated() {
     return this._updated;
   }
   constructor(
     private http: HttpClient,
     private auth: AngularFireAuth,
-    private db: AngularFireDatabase
+    private db: AngularFireDatabase,
+    private datepipe: DatePipe
   ) {
     this.auth.authState.subscribe((user) => {
       if (user) this.userId = user.uid;
@@ -47,25 +51,120 @@ export class MovieService {
 
   getMovies() {
     let movies = this.db.list(`/${this.userId}`);
-    // console.log(movies.valueChanges().subscribe());
-    return movies.valueChanges();
+    return movies
+      .snapshotChanges()
+      .pipe(
+        map((users: any[]) =>
+          users.map((user) => ({ Userid: user.key, ...user.payload.val() }))
+        )
+      );
 
     // return this.http.get<Movie[]>(this.baseUrl);
   }
 
-  // getMovieById(id: number): Observable<any> {
-  //   return this.getMovies()!.pipe(
-  //     map((movie: Movie[]) => movie.find((data) => data.id == id))
-  //   );
-  // }
+  getMovieById(id: any) {
+    let moviess: any = [];
+    let req: any = null;
+    this.getMovies().subscribe((movies) => {
+      movies.map((movie) => {
+        let obj: any = movie;
+        let flag = false;
+        let key = Object.keys(obj);
+        if (movie.Userid === this.userId) {
+          for (let i = 1; i < key.length; i++) {
+            moviess.forEach((m: Movie) => {
+              if (m.title === obj[key[i]].title) flag = true;
+            });
+            if (!flag) moviess.push(obj[key[i]]);
+          }
+          return;
+        }
 
-  toggleWatched(movie: Movie): Observable<Movie> {
-    const url = `${this.baseUrl}/${movie.id}`;
-    return this.http.put<Movie>(url, movie, httpOptions).pipe(
-      tap(() => {
+        if (Object.keys(movie).includes('description')) {
+          moviess = movies;
+          return;
+        }
+        // console.log('M length : ' + this.movies.length);
+        for (let i = 0; i < moviess.length; i++) {
+          if (moviess[i].id == id) {
+            req = moviess[i];
+            return req;
+          }
+        }
+      });
+      return;
+    });
+  }
+
+  toggleWatched(movie: Movie) {
+    movie.watched = !movie.watched;
+    let keys: any;
+    let req: any;
+    this.getMovies()
+      .pipe(first())
+      .subscribe((movies) => {
+        for (let i = 0; i < movies.length; i++) {
+          if (movies[i].id == movie.id) {
+            keys = movies[i].Userid;
+            movies[i].watched = movie.watched;
+            movies[i].dateWatched = movie.watched == true ? this.date : null;
+            req = movies[i];
+          }
+        }
+        this.db.list(`/${this.userId}/`).set(keys, req);
         this.Updated.next();
-      })
-    );
+      });
+  }
+
+  dateWatched(movie: any, date: any) {
+    let keys: any;
+    let req: any;
+    this.getMovies()
+      .pipe(first())
+      .subscribe((movies) => {
+        for (let i = 0; i < movies.length; i++) {
+          if (movies[i].id == movie.id) {
+            keys = movies[i].Userid;
+            movies[i].dateWatched = movie.watched == true ? date : null;
+            req = movies[i];
+          }
+        }
+        this.db.list(`/${this.userId}/`).set(keys, req);
+        this.Updated.next();
+      });
+  }
+
+  toggleLiked(movie: Movie) {
+    let keys: any;
+    this.getMovies()
+      .pipe(first())
+      .subscribe((movies) => {
+        for (let i = 0; i < movies.length; i++) {
+          if (movies[i].id === movie.id) {
+            keys = movies[i].Userid;
+            movies[i].liked = !movie.liked;
+            this.db.list(`/${this.userId}/`).set(keys, movies[i]);
+            this.Updated.next();
+          }
+        }
+      });
+  }
+
+  addTags(movie: any, tags: any) {
+    let keys: any;
+    let req: any;
+    this.getMovies()
+      .pipe(first())
+      .subscribe((movies) => {
+        for (let i = 0; i < movies.length; i++) {
+          if (movies[i].id === movie.id) {
+            keys = movies[i].Userid;
+            movies[i].tags = tags;
+            this.db.list(`/${this.userId}/`).set(keys, movies[i]);
+            this.Updated.next();
+          }
+        }
+      });
   }
 
   addMovie(movie: Movie) {
@@ -82,13 +181,21 @@ export class MovieService {
     // return this.http.post<Movie>(url, movie);
   }
 
-  deleteMovie(movie: Movie): Observable<void> {
-    const url = `${this.baseUrl}/${movie.id}`;
-    return this.http.delete<void>(url).pipe(
-      tap(() => {
-        this.Updated.next();
-      })
-    );
+  deleteMovie(key: any) {
+    let keys: any;
+    this.getMovies().subscribe((movies) => {
+      for (let i = 0; i < movies.length; i++) {
+        if (movies[i].id === key) {
+          keys = movies[i].Userid;
+        }
+      }
+      this.db.list(`/${this.userId}/`).remove(keys);
+    });
+    // return this.http.delete<void>(url).pipe(
+    //   tap(() => {
+    //     this.Updated.next();
+    //   })
+    // );
   }
 
   getimdbInfo(movie: Movie): Observable<Movie> {

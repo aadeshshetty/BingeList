@@ -77,14 +77,21 @@
     <button type="button" class="btn btn-primary m-auto" (click)="addRating()">
       Add Rating
     </button> -->
-    <div class="form-group mb-2">
+    <div class="form-group form-check mb-2">
       <label class="form-label" for="watched">Watched</label>
-      <select class="form-select" formControlName="watched" required>
+      <!-- <select class="form-select" formControlName="watched" required>
         <option value="yes">yes</option>
         <option value="no">no</option>
-      </select>
+      </select> -->
+      <input
+        class="form-check-input"
+        type="checkbox"
+        formControlName="watched"
+        id="watched"
+        #watched
+      />
     </div>
-    <div *ngIf="movie.get('watched')!.value === 'yes'" class="form-group mb-2">
+    <div *ngIf="movie.get('watched')!.value == true" class="form-group mb-2">
       <label class="form-label" for="dateWatched">Date Watched</label>
       <input
         type="date"

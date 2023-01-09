@@ -25,7 +25,7 @@ export class AddMovieComponent implements OnInit {
     this.createForm();
   }
   ngOnInit(): void {
-    this.movieService.getMovies().subscribe((moviesList) => {
+    this.movieService.getMovies()!.subscribe((moviesList) => {
       moviesList.map((movie, index) => {
         let obj: any = moviesList[index];
         let key = Object.keys(obj);
@@ -34,7 +34,8 @@ export class AddMovieComponent implements OnInit {
       const len = this.movies.length;
       // console.log(this.movies);
       this.id = this.movies.length;
-      this.movie.patchValue({ id: this.id });
+
+      this.movie.patchValue({ id: Math.random() });
       // console.log(obj);
       // console.log(obj[key[0]]);
     });
@@ -114,6 +115,7 @@ export class AddMovieComponent implements OnInit {
             .getomdbInfo(this.imdbInfo.d.at(0).id)
             .subscribe((info) => {
               this.omdbInfo = info;
+              console.log(info);
               this.getData(info);
             });
         });

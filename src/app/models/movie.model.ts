@@ -6,7 +6,7 @@ export interface Movie {
   description: string;
   image?: string;
   ratings?: Rating[];
-  watched: string;
+  watched: boolean;
   dateWatched?: Date | null;
   liked?: boolean;
   id: number;
