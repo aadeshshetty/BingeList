@@ -14,9 +14,9 @@ export class AddMovieComponent implements OnInit {
   movies: Movie[] = [];
   movie!: FormGroup;
   now: Date = new Date();
-  id: number = 0;
   imdbInfo: any;
   omdbInfo: any;
+  id: number = 0;
   constructor(
     private movieService: MovieService,
     private router: Router,
@@ -29,13 +29,12 @@ export class AddMovieComponent implements OnInit {
       moviesList.map((movie, index) => {
         let obj: any = moviesList[index];
         let key = Object.keys(obj);
-        this.movies.push(obj[key[0]]);
       });
       const len = this.movies.length;
-      // console.log(this.movies);
-      this.id = this.movies.length;
+      this.id += 1;
+      console.log(this.id);
 
-      this.movie.patchValue({ id: Math.random() });
+      this.movie.patchValue({ id: Math.random().toString(36).slice(2) });
       // console.log(obj);
       // console.log(obj[key[0]]);
     });
