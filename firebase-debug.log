@@ -1,0 +1,75 @@
+[debug] [2023-01-11T05:58:44.792Z] ----------------------------------------------------------------------
+[debug] [2023-01-11T05:58:44.794Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\aadesh_shetty\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init --debug
+[debug] [2023-01-11T05:58:44.794Z] CLI Version:   11.20.0
+[debug] [2023-01-11T05:58:44.794Z] Platform:      win32
+[debug] [2023-01-11T05:58:44.794Z] Node Version:  v16.13.0
+[debug] [2023-01-11T05:58:44.798Z] Time:          Wed Jan 11 2023 11:28:44 GMT+0530 (India Standard Time)
+[debug] [2023-01-11T05:58:44.798Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-01-11T05:58:44.862Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-01-11T05:58:44.864Z] > authorizing via signed-in user (aadeshmarsh2000@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\angular projects\Binge List\Binge-List
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2023-01-11T05:58:55.744Z] Using project from CLI flag: binge-list-260a1
+[debug] [2023-01-11T05:58:55.748Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/binge-list-260a1 [none]
+[debug] [2023-01-11T05:58:56.267Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/binge-list-260a1 200
+[debug] [2023-01-11T05:58:56.267Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/binge-list-260a1 {"projectId":"binge-list-260a1","projectNumber":"734960448057","displayName":"Binge-List","name":"projects/binge-list-260a1","resources":{"hostingSite":"binge-list-260a1","realtimeDatabaseInstance":"binge-list-260a1-default-rtdb"},"state":"ACTIVE","etag":"1_2109511a-e094-40c6-847d-c29e3db5e34f"}
+[info] i  Using project binge-list-260a1 (Binge-List) 
+[info] 
+=== Database Setup
+[info] i  database: ensuring required API firebasedatabase.googleapis.com is enabled... 
+[debug] [2023-01-11T05:58:56.291Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/binge-list-260a1/services/firebasedatabase.googleapis.com [none]
+[debug] [2023-01-11T05:58:56.291Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/binge-list-260a1/services/firebasedatabase.googleapis.com x-goog-quota-user=projects/binge-list-260a1
+[debug] [2023-01-11T05:58:57.997Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/binge-list-260a1/services/firebasedatabase.googleapis.com 200
+[debug] [2023-01-11T05:58:57.997Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/binge-list-260a1/services/firebasedatabase.googleapis.com [omitted]
+[info] +  database: required API firebasedatabase.googleapis.com is enabled 
+[info] 
+[debug] [2023-01-11T05:58:58.000Z] >>> [apiv2][query] GET https://firebasedatabase.googleapis.com/v1beta/projects/binge-list-260a1/locations/-/instances/binge-list-260a1-default-rtdb [none]
+[debug] [2023-01-11T05:58:59.572Z] <<< [apiv2][status] GET https://firebasedatabase.googleapis.com/v1beta/projects/binge-list-260a1/locations/-/instances/binge-list-260a1-default-rtdb 200
+[debug] [2023-01-11T05:58:59.572Z] <<< [apiv2][body] GET https://firebasedatabase.googleapis.com/v1beta/projects/binge-list-260a1/locations/-/instances/binge-list-260a1-default-rtdb {"name":"projects/734960448057/locations/us-central1/instances/binge-list-260a1-default-rtdb","project":"projects/734960448057","databaseUrl":"https://binge-list-260a1-default-rtdb.firebaseio.com","type":"DEFAULT_DATABASE","state":"ACTIVE"}
+[info] 
+[info] Firebase Realtime Database Security Rules allow you to define how your data should be
+[info] structured and when your data can be read from and written to.
+[info] 
+[info] Skipping overwrite of Realtime Database Security Rules.
+[info] The security rules defined in database.rules.json will be published when you run firebase deploy.
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[debug] [2023-01-11T05:59:17.916Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/releases.json [none]
+[debug] [2023-01-11T05:59:18.148Z] FetchError: request to https://www.gstatic.com/firebasejs/releases.json failed, reason: unable to get local issuer certificate
+    at ClientRequest.<anonymous> (C:\Users\aadesh_shetty\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\node-fetch\lib\index.js:1491:11)
+    at ClientRequest.emit (node:events:390:28)
+    at ClientRequest.emit (node:domain:475:12)
+    at TLSSocket.socketErrorListener (node:_http_client:447:9)
+    at TLSSocket.emit (node:events:390:28)
+    at TLSSocket.emit (node:domain:475:12)
+    at emitErrorNT (node:internal/streams/destroy:157:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:122:3)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+[error] 
+[error] Error: Failed to make request to https://www.gstatic.com/firebasejs/releases.json

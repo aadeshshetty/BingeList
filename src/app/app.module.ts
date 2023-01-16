@@ -17,6 +17,11 @@ import { environment } from 'src/environments/environment';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
+import {
+  NgxUiLoaderHttpModule,
+  NgxUiLoaderModule,
+  NgxUiLoaderRouterModule,
+} from 'ngx-ui-loader';
 
 @NgModule({
   declarations: [
@@ -37,6 +42,11 @@ import { AngularFireDatabase } from '@angular/fire/compat/database';
     ReactiveFormsModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
+    NgxUiLoaderModule,
+    NgxUiLoaderRouterModule,
+    NgxUiLoaderHttpModule.forRoot({
+      showForeground: true,
+    }),
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent],

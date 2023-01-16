@@ -17,4 +17,5 @@ export interface Movie {
   genres?: string;
   tags?: string[];
   comments?: string[];
+  trailer?: string;
 }

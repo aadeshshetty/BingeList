@@ -7,6 +7,7 @@ import { Movie } from '../models/movie.model';
 import { Rating } from '../models/rating.model';
 import { AuthService } from '../services/auth.service';
 import { MovieService } from '../services/movie.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-movie',
@@ -18,7 +19,8 @@ export class MovieComponent implements OnInit {
     private movieService: MovieService,
     private route: ActivatedRoute,
     private datepipe: DatePipe,
-    private auth: AngularFireAuth
+    private auth: AngularFireAuth,
+    private sanitize: DomSanitizer
   ) {}
   clicked: boolean = false;
   date = this.datepipe.transform(new Date(), 'yyyy-MM-dd');
@@ -28,6 +30,7 @@ export class MovieComponent implements OnInit {
   userId: any = '';
   id: number = this.route.snapshot.params['id'];
   tag: string = '';
+  trailer: string = '';
   ngOnInit(): void {
     this.auth.authState.subscribe((user) => {
       if (user) this.userId = user.uid;
@@ -104,11 +107,45 @@ export class MovieComponent implements OnInit {
       this.tag = '';
     });
   }
+
+  addTrailer(movie: Movie) {
+    let trailer = movie.trailer;
+    if (trailer == undefined) {
+      trailer = '';
+    }
+    if (this.trailer != '' && this.trailer != ' ') {
+      let id = this.getId(this.trailer);
+      let url = 'https://www.youtube.com/embed/' + id;
+      trailer = url;
+    }
+    this.movieService.addTrailer(movie, trailer);
+    this.movieService.Updated.subscribe((response) => {
+      this.getMovie();
+      this.trailer = '';
+    });
+  }
+
   clearTags(movie: Movie) {
     this.movieService.addTags(movie, []);
     this.movieService.Updated.subscribe((response) => {
       this.getMovie();
       this.tag = '';
     });
+  }
+
+  getId(url: String) {
+    var regExp =
+      /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+    var match = url.match(regExp);
+
+    if (match && match[2].length == 11) {
+      return match[2];
+    } else {
+      return 'error';
+    }
+  }
+
+  videoUrl() {
+    return this.sanitize.bypassSecurityTrustResourceUrl(this.movie.trailer!);
   }
 }

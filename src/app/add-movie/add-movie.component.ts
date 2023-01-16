@@ -17,6 +17,7 @@ export class AddMovieComponent implements OnInit {
   imdbInfo: any;
   omdbInfo: any;
   id: number = 0;
+  trailer: String = '';
   constructor(
     private movieService: MovieService,
     private router: Router,
@@ -32,8 +33,6 @@ export class AddMovieComponent implements OnInit {
       });
       const len = this.movies.length;
       this.id += 1;
-      console.log(this.id);
-
       this.movie.patchValue({ id: Math.random().toString(36).slice(2) });
       // console.log(obj);
       // console.log(obj[key[0]]);
@@ -60,6 +59,7 @@ export class AddMovieComponent implements OnInit {
       ratings: new FormControl([]),
       genres: new FormControl(),
       director: new FormControl(),
+      trailer: new FormControl(''),
     });
   }
 
@@ -94,6 +94,7 @@ export class AddMovieComponent implements OnInit {
   }
   submit() {
     let arr: string[] = this.tags.value;
+    this.addTrailer(this.movie.get('trailer')?.value);
     if (this.movie.get('imdbId')?.value !== '') {
       // console.log(this.movie.value);
       this.movieService
@@ -118,6 +119,33 @@ export class AddMovieComponent implements OnInit {
               this.getData(info);
             });
         });
+    }
+  }
+
+  addTrailer(trail: String) {
+    let trailer = trail;
+    if (trailer == undefined) {
+      trailer = '';
+    }
+    if (trailer != '' && trailer != ' ') {
+      let id = this.getId(trailer);
+      let url = 'https://www.youtube.com/embed/' + id;
+      trailer = url;
+      this.movie.patchValue({ trailer: url });
+      console.log(this.movie.get('trailer')?.value);
+      console.log(trailer);
+    }
+  }
+
+  getId(url: String) {
+    var regExp =
+      /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+    var match = url.match(regExp);
+
+    if (match && match[2].length == 11) {
+      return match[2];
+    } else {
+      return 'error';
     }
   }
 }

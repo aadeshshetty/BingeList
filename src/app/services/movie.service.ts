@@ -166,6 +166,22 @@ export class MovieService {
         }
       });
   }
+  addTrailer(movie: any, trailer: any) {
+    let keys: any;
+    let req: any;
+    this.getMovies()
+      .pipe(first())
+      .subscribe((movies) => {
+        for (let i = 0; i < movies.length; i++) {
+          if (movies[i].id === movie.id) {
+            keys = movies[i].Userid;
+            movies[i].trailer = trailer;
+            this.db.list(`/${this.userId}/`).set(keys, movies[i]);
+            this.Updated.next();
+          }
+        }
+      });
+  }
 
   addMovie(movie: Movie) {
     let movies = this.db.list(`/${this.userId}`);
