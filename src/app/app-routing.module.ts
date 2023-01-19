@@ -1,6 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddMovieComponent } from './add-movie/add-movie.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { MovieComponent } from './movie/movie.component';
@@ -44,6 +45,11 @@ const routes: Routes = [
     path: 'add',
     component: AddMovieComponent,
     canActivate: [AuthguardGuard],
+    pathMatch: 'full',
+  },
+  {
+    path: 'forgot-password',
+    component: ForgotPasswordComponent,
     pathMatch: 'full',
   },
   {

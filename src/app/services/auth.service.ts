@@ -27,7 +27,10 @@ export class AuthService {
         this.router.navigate(['/login']);
       },
       (err) => {
-        alert('Something went wrong');
+        let temp = '' + err;
+        console.log(temp);
+
+        alert(temp.split('.').at(0));
         this.router.navigate(['/register']);
       }
     );
@@ -42,6 +45,17 @@ export class AuthService {
       (err) => {
         alert('Something went wrong');
         console.log(err.message);
+      }
+    );
+  }
+
+  forgotPassword(email: string) {
+    this.fireAuth.sendPasswordResetEmail(email).then(
+      () => {
+        alert('Password sent email is sent');
+      },
+      (err) => {
+        alert('something went wrong');
       }
     );
   }

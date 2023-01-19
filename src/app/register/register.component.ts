@@ -15,6 +15,8 @@ export class RegisterComponent implements OnInit {
 
   register() {
     if (this.email == '') {
+      console.log(this.email);
+
       alert('eamil required');
       return;
     }

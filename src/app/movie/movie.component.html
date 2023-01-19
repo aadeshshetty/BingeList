@@ -61,8 +61,6 @@
     <div class="col-lg-6">
       <div class="card bg-dark border-secondary mb-3 h-100">
         <div class="card-body">
-          <div id="description">{{ movie.description }}</div>
-          <hr />
           <div
             *ngIf="movie.trailer == null || movie.trailer == ''; else trailers"
           >
@@ -86,6 +84,8 @@
               </div>
             </div>
           </div>
+          <hr />
+          <div id="description">{{ movie.description }}</div>
         </div>
       </div>
     </div>
@@ -176,7 +176,7 @@
             <button
               type="button"
               class="btn btn-secondary"
-              style="margin: 5px 0px !important"
+              style="margin: 5px 6px !important"
               (click)="clearTags(movie)"
             >
               Clear Tags
