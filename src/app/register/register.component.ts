@@ -17,7 +17,7 @@ export class RegisterComponent implements OnInit {
     if (this.email == '') {
       console.log(this.email);
 
-      alert('eamil required');
+      alert('email required');
       return;
     }
     if (this.password == '') {
