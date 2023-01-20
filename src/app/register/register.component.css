@@ -1,3 +1,23 @@
-.text-center {
+.text-white {
+  color: white;
+}
+
+.text-center,
+a {
+  color: #a00;
+  text-decoration: none;
+}
+
+.nav-pills .nav-link.active {
+  background-color: #a00;
+  color: white;
+}
+
+.nav-pills .nav-link {
+  color: #a00;
+}
+
+.btn {
+  background-color: #a00;
   color: white;
 }

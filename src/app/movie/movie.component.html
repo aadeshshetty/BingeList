@@ -2,7 +2,7 @@
 <div class="container p-4">
   <div class="row">
     <div class="col-lg-3">
-      <div class="card bg-dark border-secondary mb-3 h-100">
+      <div class="card bg-dark border-secondary mb-5 h-100">
         <a>
           <img
             src="{{ movie.image }}"
@@ -63,6 +63,7 @@
         <div class="card-body">
           <div
             *ngIf="movie.trailer == null || movie.trailer == ''; else trailers"
+            class="section-trialer"
           >
             <div class="row">
               <div class="col-lg-6 m-auto">
@@ -215,13 +216,8 @@
     </button>
   </ng-template>
   <ng-template #trailers>
-    <iframe
-      width="550"
-      height="500"
-      [src]="videoUrl()"
-      style="margin-left: 20px"
-      allowfullscreen
-    ></iframe
+    <div class="section-trialer">
+      <iframe [src]="videoUrl()" allowfullscreen></iframe></div
   ></ng-template>
 
   <ng-template #liked>

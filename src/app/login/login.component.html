@@ -111,9 +111,7 @@
 
               <div class="col d-flex justify-content-center">
                 <!-- Simple link -->
-                <a class="btn text-primary" [routerLink]="['/forgot-password']"
-                  >Forgot password?</a
-                >
+                <a [routerLink]="['/forgot-password']">Forgot password?</a>
               </div>
             </div>
 
@@ -121,7 +119,7 @@
             <button
               type="submit"
               (click)="login()"
-              class="btn btn-primary btn-block mb-4 w-100"
+              class="btn btn-block mb-4 w-100"
             >
               Sign in
             </button>
